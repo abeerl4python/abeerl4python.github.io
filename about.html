@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+
+body{max-height: 2000px;
+   cursor:url("badge3.png"), auto;}/*Sets the height of the web page*/
+
+button#scrollbutton{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background-color: rgba(102, 100, 100, 0.5);
+    border: #fff 2px solid;
+    color:white;
+    border-radius: 100%;
+    padding: 0px 9px;
+    cursor:pointer; /*change*/
+    font-size: 1.9em;
+    display: flex;          
+    justify-content: center;
+    align-items: center;   
+    z-index: 15;
+   
+}
+
+button#scrollbutton:hover {
+    background-color: rgb(126, 144, 120);
+}
+
+.arrow{
+margin-left:5px;
+}
+
+
+nav {
+    background-color: transparent;
+    color:azure;
+    padding:5px;
+     align-items: center;
+    font-family: "Impact";
+    font-weight: bold ;
+    font-size: 19px;
+    text-align: center;
+}
+
+nav a{  color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.3em;}
+
+nav img{
+    width:50px;
+    height:50px;
+    border-radius: 5px;
+    right:20px;
+    top:10px;
+}
+
+
+nav.scrolled {
+            background-color: black;
+         }
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index: 1000;
+}
+
+ /* Hover effect for the navigation links */
+ .navbar ul a:hover {
+        background-color: transparent;
+        color: #657560;
+    }
+
+.download-button{
+    position:fixed;
+    top:7%;
+    right:155px;
+    transform: translateY(-50%);
+    padding:10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: rgb(232, 235, 238);
+}
+
+.download-text{
+    position:fixed;
+    top:5%;
+    right:10px;
+    color: #d0cba2;
+    font-style: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+
+.download-button img{
+    width: 50px;
+    height:auto;
+    border-radius: 5px;
+}
+
+.logo img{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 10px;
+    left:20px;
+}
+
+
+        .about {
+            background-image: url("gradient.png");
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            background-size: cover;
+            color: #fff;
+            width:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 1500px;
+            flex-direction: column;
+        }
+
+    .lastof {
+            display: flex;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            position:absolute;
+            top:1100px;
+            z-index: 3;
+        }
+
+        .uncover{
+            position: relative;
+            top:-45%;
+        }
+
+        .uncover h2{font-size: 70px;
+          font-family: "Impact";
+         text-align: center;
+         position: relative;
+         top:180px;
+        }
+
+        .uncover p{font-size: 20px;
+        font-family: "Impact";
+        text-align: center;
+        position: relative;
+        top:120px;
+        background-color:#d5cfa4,
+        }
+
+        .box {
+            box-shadow: solid 2px #fff;
+            position: relative;
+            width: 350px;
+            height: 300px;
+            background-color: #a9a6a6;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            border: 2px solid #b4b4b4;
+        }
+
+        .box img {
+            width: 100%;
+            height: 225px;
+        }
+
+        .heading {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100%;
+            height:55px;
+            background-color: rgb(76, 75, 75);
+            color: rgb(223, 223, 223);
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 10px;
+            cursor: pointer;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1;
+        }
+
+        .heading h2{position: absolute;
+        text-align: center;
+        padding:10px;
+        top:-10px;
+        font-family: "Impact";
+        color: #e2e3e1;
+         }
+
+        .info {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height:77px;
+            background-color: rgb(212, 211, 211);
+            color: rgb(60, 60, 60);
+            text-align: left;
+            padding-left: 0px;
+            transition: bottom 0.3s ease-in-out;
+        }
+
+        .info h3{font-family: "Impact";
+         font-size: 23px;
+        font-weight: 100;
+        color:#657560}
+
+         .info p{font-size: 14px;}
+        .box:hover .info {
+            bottom: 0px;
+            top:230px;
+        }
+
+        .box:hover .heading {
+            opacity: 0;
+        }
+
+        .box p {
+            margin: 10px 0 0 0;
+        }
+
+        .box h3 {
+            margin: 0;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .guide {
+            font-family: Arial, sans-serif;
+            background-color:transparent;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300vh;
+            z-index: 3;
+         top:0%;
+        }
+        .container {
+            display: flex;
+            overflow: hidden;
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+            top:390px;
+            height:200vh
+        }
+        .card {
+            position: relative;
+            margin: 20px;
+            width: 450px;
+            height:350px;
+            top:0px;
+            background-color:transparent;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex-shrink: 0;
+            z-index: 3;
+        }
+        .card img {
+            width: 100%;
+            height:350px;
+            border-radius: 10px 10px 0 0;
+            z-index: 3;
+        }
+        .card button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .card h3 {
+            margin: 15px;
+        }
+        .card p {
+            margin: 0 15px 15px;
+        }
+       
+        .arrow-left {
+            left: 10px;
+            position: absolute;
+            top: 80%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border: #fff 1px solid;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .arrow-right {
+            right: 10px;
+            position: absolute;
+            top: 80%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border: #fff 1px solid;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .selected {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px #fff;
+        }
+
+        .building h2{font-size: 80px;
+          font-family: "Impact";
+           text-align: center;
+           padding:0px;
+           position:absolute;
+           top:60px;
+           left:390px
+        }
+
+        .building p{font-size: 20px;
+          font-family: "Impact";
+           text-align: center;
+           position:absolute;
+           top:195px;
+           left:535px;
+        }
+
+
+ /*FOOTER*/
+ footer {
+    background-color: #000000;
+    padding: 20px 0;
+    color: aliceblue;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.column h3 {
+    color:#8ea487;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: "Impact";
+}
+
+.column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.column ul li {
+    margin-bottom: 5px;
+}
+
+.column ul li a {
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.column ul li a:hover {
+    text-decoration:underline ;
+}
+
+.column img {
+    max-width: 100%;
+    height: auto;
+}
+
+.copy-right{ background-color: #101010;
+height: 80px;
+}
+
+.copy-right p{ font-family: Arial;
+   font-size: 16px;
+ text-align: center;
+top:15%;
+position:relative}
+
+.all p{ font-family: Arial;
+       font-size: 16px;
+        text-align: center;
+        bottom:5%;
+       position:relative;
+     color:#8ea487}
+
+     @keyframes slideDown { /*slide down animation*/
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-down {
+    animation: slideDown 1s ease-out forwards;
+}
+
+@keyframes slideDown { /*addition of the key frames to avoid adding in each div class*/
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-down {  /*for the specification of the animation*/
+    animation: slideDown 1s ease-out forwards;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <button id="scrollbutton" onclick="scrollToTop()">
+        <span class="arrow">&#8593;</span>
+    </button>
+    <header>
+        <div class="navbar">
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <a href="https://www.playstation.com/en-us/games/the-last-of-us-part-i/" class="download-button">
+                <img src="fireflyy.png" alt="download">
+            </a>
+            <div class="download-text">DOWNLOAD NOW</div> 
+
+            <ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About </a>
+                <a href="howtoplay.html">How to Play</a>
+                <a href="character.html">Meet the Cast</a>
+                <a href="contact.html">Contact</a>
+            </ul>
+            </div>
+            </nav>
+            </div>
+    </header>
+
+
+    <div class="about">
+        <div class="building"><h2 class="animate-heading"> BUILDING THE LAST OF US</h2>
+        <p class="animate-heading">Go behind the scenes to see how The Last Of Us was created.</p></div>
+    <div class="guide">
+        <button class="arrow arrow-left" onclick="prevCard()">&#9664;</button>
+        <div class="container">
+            <div class="card selected">
+                <a href="https://www.youtube.com/watch?v=Vbzz6A2ElB4" target="_blank">
+                    <button>&#9654;</button>
+                    <img src="video1.png" alt="The Last of Us Part I">
+                </a>
+            </div>
+           
+            <div class="card selected">
+                <a href="https://www.youtube.com/watch?v=LbLaYPXEnzM" target="_blank">
+                    <button>&#9654;</button>
+                    <img src="video2.jpg" alt="The Last of Us Part I">
+                </a>
+            </div>
+
+            <div class="card selected">
+                <a href="https://www.youtube.com/watch?v=zJOq88x6tdU" target="_blank">
+                    <button>&#9654;</button>
+                    <img src="video3.png" alt="The Last of Us Part I">
+                </a>
+            </div>
+
+            <div class="card selected">
+                <a href="https://www.youtube.com/watch?v=_Gpi-W7kBAs" target="_blank">
+                    <button>&#9654;</button>
+                    <img src="video4.jpg" alt="The Last of Us Part I">
+                </a>
+            </div>
+
+            <div class="card selected">
+                <a href="https://www.youtube.com/watch?v=nW4lza12f-E&t=2s" target="_blank">
+                    <button>&#9654;</button>
+                    <img src="video5.jpg" alt="The Last of Us Part I">
+                </a>
+            </div>
+
+        </div>
+        <button class="arrow arrow-right" onclick="nextCard()">&#9654;</button>
+        </div>
+
+        <div class="uncover"> <h2 class="animate-uncover">UNCOVER GAME MODES</h2> 
+            <p>Test your limits with some difficult advancements within the game.</p> </div>
+
+            <div class="lastof">
+                <div class="box">
+                    <img src="storymode.jpg" alt="Achievement Image">
+                    <div class="heading"><h2>STORY MODE</h2></div>
+                    <div class="info">
+                        <h3>Join in on the Journey!</h3>
+                        <p>Immerse yourself in the gripping narrative of The Last of Us with Story Mode.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="survivalmode.jpg" alt="Achievement Image">
+                    <div class="heading"><h2>SURVIVAL MODE</h2></div>
+                    <div class="info">
+                        <h3>Test your skills!</h3>
+                        <p>Test your limits in Survival Mode, where resources are scarce, and enemies are relentless. </p>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="groundedmode.jpg" alt="Achievement Image">
+                    <div class="heading"><h2>GROUNDED MODE</h2></div>
+                    <div class="info">
+                        <h3>A new challenge!</h3>
+                        <p>For the ultimate test of skill and endurance, enter Grounded Mode. </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <footer>
+                <div class="footer-columns">
+                    <div class="column">
+                        <img src="footer1.png" alt="footer1">
+                    </div>
+                    <div class="column">
+                        <img src="footer2.jpg" alt="footer2">
+                    </div>
+                    <div class="column">
+                        <h3>QUICK LINKS</h3>
+                        <ul>
+                            <li><a href="about.html">&#10095; About Us</a></li>
+                            <li><a href="contact.html">&#10095; Contact Us</a></li>
+                            <li><a href="https://www.playstation.com/en-ae/games/the-last-of-us-part-i/#faqs">&#10095; FAQ's</a></li>
+                            <li><a href="https://www.playstation.com/en-ae/support/?smcid=pdc%3Aen-ae%3Agames-the-last-of-us-part-i%3Aprimary%20nav%3Amsg-support%3Asupport">&#10095; Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <img src="footer3.png" alt="footer3">
+                    </div>
+                </div>
+            </footer>
+            <footer>
+                <div class="copy-right">
+                <p>All rights reserved to Original The Last of Us &copy;2013-2023.</p>
+               <div class="all"><p>&copy; All Copyright 2024 by Abeer.</p></div> 
+                </div>
+            </footer>
+            
+    <script>
+        // for changing the back-grond color of the nav bar when scrolled
+        document.addEventListener('scroll', function () {
+        const navbar = document.querySelector('nav');
+        if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+        } else {
+        navbar.classList.remove('scrolled');
+        }
+       });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.querySelector('.lastof');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        container.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(container);
+        });
+
+        let currentCard = 0;
+        const cards = document.querySelectorAll('.card');
+
+        function scrollToTop() {
+    window.scrollTo({
+        top:0,
+        behaviour: 'smooth'
+    });
+}
+
+
+        function showCard(index) {
+            cards.forEach((card, i) => {
+                card.classList.toggle('selected', i === index);
+            });
+        }
+
+        function prevCard() {
+            currentCard = (currentCard > 0) ? currentCard - 1 : cards.length - 1;
+            showCard(currentCard);
+            document.querySelector('.container').scrollLeft -= 320; /*Selection of the div class*/
+        }
+
+        function nextCard() {
+            currentCard = (currentCard < cards.length - 1) ? currentCard + 1 : 0;
+            showCard(currentCard);
+            document.querySelector('.container').scrollLeft += 320; /*Selection of the div class*/
+        }
+
+        /* Initially shows the first card as selected*/
+        showCard(currentCard);
+
+        
+        document.addEventListener('DOMContentLoaded', () => {
+    const heading = document.querySelector('.animate-heading');
+    heading.classList.add('slide-down');
+
+    const uncoverHeading = document.querySelector('.animate-uncover');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                uncoverHeading.classList.add('slide-down');
+                observer.unobserve(entry.target); /*Stops observing after the first reveal*/
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(uncoverHeading);
+});
+
+
+    </script>
+</body>
+</html>

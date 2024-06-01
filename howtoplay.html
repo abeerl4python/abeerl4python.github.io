@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /*CSS*/
+
+        body{cursor:url("badge3.png"), auto;}
+       /*NAVIGATION BAR*/
+         nav {
+           background-color: transparent;
+           color:azure;
+           padding:5px;
+           align-items: center;
+           font-family: "Impact";
+           font-weight: bold ;
+           font-size: 19px;
+           text-align: center;
+           transition: background-color 0.3s;
+            }
+
+         nav.scrolled {
+            background-color: black;
+         }
+
+        nav a{  color: white;
+         padding: 10px 15px;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 1.3em;}
+
+          /* Hover effect for the navigation links */
+         .navbar ul a:hover {
+        background-color: transparent;
+        color: #657560;
+          }
+
+
+        nav img{
+         width:50px;
+         height:50px;
+         border-radius: 5px;
+         right:20px;
+         top:10px;
+         }
+
+         .navbar{
+         position:fixed;
+         top:0;
+         width:100%;
+         z-index: 1000;
+         }
+
+
+        .download-button{
+         position:fixed;
+         top:7%;
+         right:155px;
+         transform: translateY(-50%);
+         padding:10px;
+         border-radius: 5px;
+         text-decoration: none;
+         color: rgb(232, 235, 238);
+         }
+
+        .download-text{
+         position:fixed;
+         top:5%;
+         right:10px;
+         color: #d0cba2;
+         font-style: bold;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 16px;
+        }
+
+
+         .download-button img{
+           width: 50px;
+           height:auto;
+           border-radius: 5px;
+        }
+
+        .logo img{
+            width: 70px;
+            height: 70px;
+            position: absolute;
+            top: 10px;
+            left:20px;
+        }
+     
+        /*BODY*/
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("wall1.jpg");
+            background-color: #1c1c1c;
+            max-width: 1700px; /*Sets the width of the webpage*/
+        }
+
+        
+        .howto h2{text-align: center;
+        font-family: "Impact";
+        font-size:80px;
+        color: #d4d6d4;
+        position: relative;
+        margin-top: 100px;
+        opacity: 0;
+        transform: translateY(-100px);
+        transition: opacity 1s, transform 1s;
+       }
+
+        .howto p{text-align: center;
+        font-family: "Impact";
+        font-size:25px;
+        color: #6d5454;
+        position:absolute;
+        top:25%;
+        left:42%;
+     }
+
+        h1 {
+            color: #7d7e7d;
+            font-size: 45px;
+            font-family: "Impact";
+        }
+
+        p {
+            font-size: 20px;
+            color: #dfdfdf;
+        }
+        
+        .highlight {
+            color: #FFA500;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+        .container {
+            text-align: left;
+            max-width: 800px;
+            padding: 20px;
+            margin-left: 100px;
+            margin-right: 730px;
+            margin-top: 100px;
+            opacity: 0;
+            transform: translateY(-100px);
+            transition: opacity 1s, transform 1s;
+         }
+
+        .container1 {
+            text-align: left;
+            max-width: 800px;
+            padding: 20px;
+            margin-left: 700px;
+            margin-right: 100px;
+            margin-top: 160px;
+            opacity: 0; /* Start with opacity 0 */
+            transform: translateY(50px); /* Start below */
+            transition: opacity 1s ease-out, transform 1.5s ease-out;
+         }
+
+         .container1.show {
+            opacity: 1; /* End with opacity 1 */
+            transform: translateY(0); /* End in place */
+         }
+
+        .container2 {
+            text-align: left;
+            max-width: 800px;
+            padding: 20px;
+            margin-left: 100px;
+            margin-right: 730px;
+            margin-top: 220px;
+            opacity: 0; /* Start with opacity 0 */
+            transform: translateY(50px); /* Start below */
+            transition: opacity 1s ease-out, transform 1.5s ease-out;
+            }
+
+        .container2.show {
+            opacity: 1; /* End with opacity 1 */
+            transform: translateY(0); /* End in place */
+            }
+       
+        .content img {
+            width: 550px;
+            height: 350px;
+            position: absolute;
+            right:90px;
+            top:310px;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(-100px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .content1 img {
+            width: 600px;
+            height: 390px;
+            position: absolute;
+            left:90px;
+            top:770px;
+            border-radius: 10px;
+            opacity: 0; /* Start with opacity 0 */
+            transform: translateY(50px); /* Start below */
+            transition: opacity 1s ease-out, transform 1.5s ease-out;
+          }
+        
+        .content1 img.show {
+            opacity: 1; /* End with opacity 1 */
+            transform: translateY(0); /* End in place */
+            }
+
+        .content2 img {
+            width: 600px;
+            height: 350px;
+            position: absolute;
+            right:90px;
+            top:1310px;
+            border-radius: 10px;
+            opacity: 0; /* Start with opacity 0 */
+            transform: translateY(50px); /* Start below */
+            transition: opacity 1s ease-out, transform 1.5s ease-out;
+        }
+
+        .content2 img.show {
+            opacity: 1; /* End with opacity 1 */
+            transform: translateY(0); /* End in place */
+            }
+
+    /*ICONS*/
+    .fa-arrows-alt {font-size: 25px;
+     color:#820202}
+
+     .fa-tools {font-size: 25px;
+     color:#a80000}
+
+     .fa-crosshairs {font-size: 25px;
+     color:#a80000}
+
+     /*SCROLL BUTTON*/
+     button#scrollbutton{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background-color: rgba(102, 100, 100, 0.5);
+    border: #fff 2px solid;
+    color:white;
+    border-radius: 100%;
+    padding: 3px 10px;
+    cursor:pointer; /*change*/
+    font-size: 1.6em;
+    display: flex;          
+    justify-content: center;
+    align-items: center;   
+    z-index: 15; /*Allows the content to be layered above*/
+   
+}
+
+button#scrollbutton:hover {
+    background-color: rgb(126, 144, 120);
+}
+
+.arrow{
+margin-left:5px;
+}
+
+footer {
+    background-color: #000000;
+    padding: 20px 0;
+    color: aliceblue;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.column h3 {
+    color:#8ea487;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: "Impact";
+}
+
+.column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.column ul li {
+    margin-bottom: 5px;
+}
+
+.column ul li a {
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.column ul li a:hover {
+    text-decoration:underline ;/*Adds an underline when the text is hovered*/
+}
+
+.column img {
+    max-width: 100%;
+    height: auto;
+}
+
+.copy-right{ background-color: #101010;
+height: 80px;
+}
+
+.copy-right p{ font-family: Arial;
+   font-size: 16px;
+ text-align: center;
+top:15%;
+position:relative}
+
+.all p{ font-family: Arial;
+       font-size: 16px;
+        text-align: center;
+        bottom:5%;
+       position:relative;
+     color:#8ea487}
+
+     
+     @keyframes slideDown {
+                            0% {
+                                transform: translateY(-50px); /* Start above */
+                                opacity: 0;
+                            }
+                            100% {
+                                transform: translateY(0); /* End in place */
+                                opacity: 1;
+                            }
+                        }
+
+  </style>
+  
+</head>
+<body>
+    <button id="scrollbutton" onclick="scrollToTop()">
+        <span class="arrow">&#8593;</span>
+    </button>
+
+    <header>
+        <div class="navbar">
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <a href="https://www.playstation.com/en-us/games/the-last-of-us-part-i/" class="download-button">
+                <img src="fireflyy.png" alt="download">
+            </a>
+            <div class="download-text">DOWNLOAD NOW</div> 
+
+            <ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About </a>
+                <a href="howtoplay.html">How to Play</a>
+                <a href="character.html">Meet the Cast</a>
+                <a href="contact.html">Contact</a>
+            </ul>
+            </div>
+            </nav>
+            </div>
+    </header>
+
+    <div class="howto"><h2>HOW TO PLAY</h2>
+    <p>Endure! Explore! Survive!</p></div>
+
+    <div class="container">
+        <h1>Explore and Survive</h1>
+        <p>With each careful step, you edge closer to your destination, wary of the dangers that lurk in the shadows of this desolate landscape.</p>
+        <p class="highlight"><strong><p class="fas fa-arrows-alt"></strong>Use the arrow keys or W/A/S/D to move your character around the environment.</div></p>
+        <div class="content">
+            <img src="movement.jpg" alt="Minecraft chest with items">
+        </div>
+    </div>
+
+    
+    <div class="container1">
+        <h1>Crafting Essentials </h1>
+        <p>Crafting is your key to adaptation, turning scattered remnants into tools for survival.. Use your supplies effectly.</p>
+        <p class="highlight"><strong><p class="fas fa-tools"></strong>Click on the items in the crafting menu to create medkits and molotov cocktails.</div></p>
+        <div class="content1">
+            <img src="crafting.png" alt="Minecraft chest with items">
+        </div>
+    </div>
+
+    <div class="container2">
+        <h1>Shoot Precisely </h1>
+        <p>Every click and movement counts as you navigate the perilous world of The Last of Us, honing your aim to survive against the odds.</p>
+        <p class="highlight"><strong><p class="fas fa-crosshairs"></strong>Move your mouse to aim. Click the left mouse button to shoot. Use the right mouse button to zoom in for better accuracy.</div></p>
+        <div class="content2">
+            <img src="aiming.jpg" alt="Minecraft chest with items">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-columns">
+            <div class="column">
+                <img src="footer1.png" alt="footer1">
+            </div>
+            <div class="column">
+                <img src="footer2.jpg" alt="footer2">
+            </div>
+            <div class="column">
+                <h3>QUICK LINKS</h3>
+                <ul>
+                    <li><a href="about.html">&#10095; About Us</a></li>
+                    <li><a href="contact.html">&#10095; Contact Us</a></li>
+                    <li><a href="https://www.playstation.com/en-ae/games/the-last-of-us-part-i/#faqs">&#10095; FAQ's</a></li>
+                    <li><a href="https://www.playstation.com/en-ae/support/?smcid=pdc%3Aen-ae%3Agames-the-last-of-us-part-i%3Aprimary%20nav%3Amsg-support%3Asupport">&#10095; Support</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <img src="footer3.png" alt="footer3">
+            </div>
+        </div>
+    </footer>
+    <footer>
+        <div class="copy-right">
+            <p>All rights reserved to Original The Last of Us &copy;2013-2023.</p>
+           <div class="all"><p>&copy; All Copyright 2024 by Abeer.</p></div> 
+            </div>
+    </footer>
+
+    <script>
+        /*Allows the scroll key to move*/
+      document.addEventListener('scroll', function () {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+        
+        });
+
+        function scrollToTop() {
+    window.scrollTo({
+        top:0,
+        behaviour: 'smooth'
+    });
+   }
+
+   /*Animates the text when the page loads*/
+   window.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.howto h2');
+            header.style.opacity = '1';
+            header.style.transform = 'translateY(0)';
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            const container = document.querySelector('.container');
+            const image = document.querySelector('.content img');
+            
+            observer.observe(container);
+            observer.observe(image);
+        });
+
+        // Function to check if an element is in viewport
+ function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+  // Function to check if an element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top < window.innerHeight && rect.bottom > 0
+    );
+}
+
+// Function to add the show class to elements in viewport
+function showElementsInViewport() {
+    const cards = document.querySelectorAll('.container1, .container2, .content1 img, .content2 img');
+    cards.forEach(card => {
+        if (isInViewport(card)) {
+            card.classList.add('show');
+        }
+    });
+}
+
+// Listen for scroll events
+window.addEventListener('scroll', showElementsInViewport);
+// Trigger the function once to show elements already in viewport on load
+window.addEventListener('load', showElementsInViewport);
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+      
+
+
+  
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Meet the characters</title>
+<link rel="stylesheet" href="web.css">
+<style>
+
+body{cursor:url("badge3.png"), auto;}
+
+nav {
+    background-color: transparent;
+    color:azure;
+    padding:5px;
+     align-items: center;
+    font-family: "Impact";
+    font-weight: bold ;
+    font-size: 19px;
+    transition: background-color 0.3s;
+}
+
+nav.scrolled {
+    background-color: black;
+}
+
+nav a{  color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.3em;}
+
+ /* Hover effect for the navigation links */
+ .navbar ul a:hover {
+        background-color: transparent;
+        color: #657560;
+    }
+
+nav img{
+    width:50px;
+    height:50px;
+    border-radius: 5px;
+    right:20px;
+    top:10px;
+}
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index: 1000;
+}
+
+
+.download-button{
+    position:fixed;
+    top:7%;
+    right:155px;
+    transform: translateY(-50%);
+    padding:10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: rgb(232, 235, 238);
+}
+
+.download-text{
+    position:fixed;
+    top:5%;
+    right:10px;
+    color: #d0cba2;
+    font-style: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.download-button img{
+    width: 50px;
+    height:auto;
+    border-radius: 5px;
+}
+
+.logo img{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 10px;
+    left:20px;
+}
+
+.gradient{
+    background-image: url("gradient.png");
+     background-color: rgb(0, 0, 0);
+         background-size: cover;
+         background-position: center;
+     height: 1150px;
+ }
+ 
+ .gradient1{ background-image: url("gradient1.png");
+   background-color: rgb(0, 0, 0);
+       background-size: cover;
+       background-position: center;
+   height: 900px;
+ }
+ 
+ .gradient2{ background-image: url("gradient2.png");
+   background-color: rgb(0, 0, 0);
+       background-size: cover;
+       background-position: center;
+   height: 700px;
+ }
+ 
+ h1{font-family: 'Impact';
+ font-size: 80px;
+ text-align: center;
+ top:30px;
+ position:relative;
+ color:rgb(210, 210, 210);
+ opacity: 0; /* Ensures element is hidden initially */
+    transform: translateY(100px);
+    animation: slideUp 1s forwards; 
+ }
+ 
+ .meet h2{font-family: 'Impact';
+ font-size:50px;
+ text-align: center;
+ color:#d7e1cd;
+ opacity: 0; /* Ensures element is hidden initially */
+    transform: translateY(100px);
+    animation: slideUp 1s forwards;}
+ 
+ .additional h2{font-family: 'Impact';
+   font-size:60px;
+   text-align: center;
+   position: relative;
+   top:10px;
+   color:#d7e1cd;
+   opacity: 0; /* Start with opacity 0 */
+ transform: translateY(50px); /* Start below */
+ transition: opacity 1s ease-out, transform 1.5s ease-out;
+}
+ 
+ .infected h2{font-family: 'Impact';
+   font-size:60px;
+   text-align: center;
+   position: relative;
+   top:100px;
+   color:#d7e1cd;
+   opacity: 0; /* Start with opacity 0 */
+ transform: translateY(50px); /* Start below */
+ transition: opacity 1s ease-out, transform 1.5s ease-out;
+}
+
+.infected h2.show,
+.additional h2.show
+          {
+            opacity: 1; /* End with opacity 1 */
+            transform: translateY(0); /* End in place */
+            }
+ 
+ 
+ .modal {
+     display: none; /* Hidden by default */
+     position: fixed; /* Stay in place */
+     z-index: 1; /* Sit on top */
+     left: 0;
+     top: 0px;
+     width: 100%; /* Full width */
+     height: 100%; /* Full height */
+     overflow: x,y; /* Enable scroll if needed */
+     background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+   }
+   
+   /* Modal Content */
+   .modal-content {
+    position: relative;
+     background-color: #141414;
+     margin: 10% auto;
+     padding: 10px;
+     border: 1px solid  #888;
+     width: 43%;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+       0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   }
+   
+   /* The Close Button */
+   .close {
+     color: #aaa;
+     position: absolute;
+     top: 10px;
+     right: 25px;
+     font-size: 28px;
+     font-weight: bold;
+   }
+   
+   .close:hover,
+   .close:focus {
+     color: black;
+     text-decoration: none;
+     cursor: pointer;
+   }
+   
+   /* Character container */
+   .character {
+     display: inline-block; /* Display characters inline */
+     margin-right: 20px; /* Add margin between characters */
+     margin-top: 30px;
+   }
+   
+   /* Character images */
+   .character img {
+     position: relative;
+     left: 230px;
+     width: 330px;
+     height: 600px; /* Set width of character images */
+     display: block; /* Ensure images are displayed as blocks */
+     margin-bottom: 10px; /* Add margin below each image */
+     border-radius: 10px;
+   }
+ 
+   .character h2{position: relative;
+   left: 330px;
+ font-family: 'Impact';
+ font-size: 60px;
+ color: #dedddd;
+ opacity: 0; /* Start with opacity 0 */
+ transform: translateY(50px); /* Start below */
+ transition: opacity 1s ease-out, transform 1.5s ease-out;}
+
+ .character h2.show
+          {
+            opacity: 1; /* End with opacity 1 */
+            transform: translateY(0); /* End in place */
+            }
+   
+   .images{display:flex;
+   margin-right: 20px;
+ margin-left: 0px;}
+ 
+ .modal-content h2{font-size: 50px;
+ font-family: 'Impact';
+ position: relative;
+ left:10px;
+text-align: left;}
+ 
+ .modal-content p{font-size: 17px;
+ color: #dedddd;
+ font-family: "Arial"; }
+   
+   .images img{position: relative;
+   display: block;
+   width:250px;
+   height:270px;
+   left:50px;
+   margin-right:5px
+ }
+   /* Find More button */
+   .find-more {position: relative;
+    left:350px;
+     cursor: pointer;
+     padding:8px;
+     border-radius: 20px;
+     font-family: "Roboto";
+     font-size: 15px;
+     background-color:#dedddd ;
+     }
+   
+
+   .find-more:hover{color: #000000;
+ background-color:#8ea487;}
+ 
+   .fourth-character,
+ .fifth-character,
+ .sixth-character,
+ .seventh-character{
+   display: inline-block; /* Display characters inline */
+     margin-right: 20px; /* Add margin between characters */
+     margin-top: 30px;
+ }
+
+ 
+ /* Adjust margin for the first additional character */
+ .fourth-character {
+     margin-left: 20px; /* Remove margin on the left side */
+ }
+ 
+ /* Apply margin only on the right side for additional characters */
+ .fifth-character,
+ .sixth-character {
+     margin-left: 20px; /* Add margin on the left side */
+ }
+ 
+ /* Styles for images of additional characters */
+ .fourth-character img,
+ .fifth-character img,
+ .sixth-character img,
+ .seventh-character img {
+   position: relative;
+   display: block;
+   width:290px;
+   height:510px;
+   top:80px;
+   left:90px;
+   margin-right:5px;
+   opacity: 0; /* Start with opacity 0 */
+   transform: translateY(50px); /* Start below */
+   transition: opacity 1s ease-out, transform 1.5s ease-out;
+ }
+ 
+ .fourth-character img.show,
+ .fifth-character img.show,
+ .sixth-character img.show,
+ .seventh-character img.show
+ {
+            opacity: 1; /* End with opacity 1 */
+            transform: translateY(0); /* End in place */
+            }
+
+ .images img{position: relative;
+   display: block;
+   width:250px;
+   height:270px;
+   left:50px;
+   margin-right:5px;
+   top:20px
+ }
+   
+ .fourth-character h2,
+ .fifth-character h2,
+ .sixth-character h2,
+ .seventh-character h2{position: relative;
+   top:80px;
+   left: 150px;
+ font-family: 'Impact';
+ font-size: 45px;
+ color: #dedddd;
+ opacity: 0; /* Start with opacity 0 */
+transform: translateY(50px); /* Start below */
+transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fourth-character h2.show,
+ .fifth-character h2.show,
+ .sixth-character h2.show,
+ .seventh-character h2.show
+ {
+            opacity: 1; /* End with opacity 1 */
+            transform: translateY(0); /* End in place */
+            }
+ 
+ 
+ .fourth-character .find-more,
+ .fifth-character .find-more,
+ .sixth-character .find-more,
+ .seventh-character .find-more{position: relative;
+   left: 160px;
+   top:60px;
+   opacity: 0; /* Start with opacity 0 */
+   transform: translateY(50px); /* Start below */
+   transition: opacity 1s ease-out, transform 1s ease-out;
+ }
+
+ .fourth-character .find-more.show,
+ .fifth-character .find-more.show,
+ .sixth-character .find-more.show,
+ .seventh-character .find-more.show
+ {
+            opacity: 1; /* End with opacity 1 */
+            transform: translateY(0); /* End in place */
+            }
+ 
+ .modal-content h2{font-size: 50px;
+   font-family: 'Impact';
+   position: relative;
+   left:10px;
+ top:30px;
+text-align: left;}
+ 
+   .modal-content p{font-size: 17px;
+     color: #dedddd;
+   font-family: "Arial"; }
+ 
+     .eight-character img,
+ .ninth-character img,
+ .tenth-character img,
+ .eleventh-character img,
+ .twelveth-character img,
+ .thirteenth-character img {
+   position: relative;
+   display: block;
+   width:220px;
+   height:410px;
+   top:50px;
+   left:20px;
+   margin-right:5px;
+ }
+
+ .images img{position: relative;
+   display: block;
+   width:250px;
+   height:270px;
+   left:50px;
+   margin-right:5px;
+   top:20px
+ }
+ 
+ .eight-character h2,
+ .ninth-character h2,
+ .tenth-character h2,
+ .eleventh-character h2,
+ .twelveth-character h2,
+ .thirteenth-character h2{position: relative;
+   top:60px;
+   left: 60px;
+ font-family: 'Impact';
+ font-size: 40px;
+ color: #dedddd;
+ opacity: 0; /* Start with opacity 0 */
+   transform: translateY(50px); /* Start below */
+   transition: opacity 1s ease-out, transform 1s ease-out;}
+
+   .eight-character h2.show,
+ .ninth-character h2.show,
+ .tenth-character h2.show,
+ .eleventh-character h2.show,
+ .twelveth-character h2.show,
+ .thirteenth-character h2.show{
+            opacity: 1; /* End with opacity 1 */
+            transform: translateY(0); /* End in place */
+            }
+ 
+ .eight-character .find-more,
+ .ninth-character .find-more,
+ .tenth-character .find-more,
+ .eleventh-character .find-more,
+ .twelveth-character .find-more,
+ .thirteenth-character .find-more{position: relative;
+   left: 80px;
+   top:60px;
+   opacity: 0; /* Start with opacity 0 */
+   transform: translateY(50px); /* Start below */
+   transition: opacity 1s ease-out, transform 1s ease-out;
+ }
+
+ 
+ .eight-character .find-more.show,
+ .ninth-character .find-more.show,
+ .tenth-character .find-more.show,
+ .eleventh-character .find-more.show,
+ .twelveth-character .find-more.show,
+ .thirteenth-character .find-more.show{
+            opacity: 1; /* End with opacity 1 */
+            transform: translateY(0); /* End in place */
+            }
+ 
+ .modal-content h2{font-size: 50px;
+   font-family: 'Impact';
+   position: relative;
+   left:10px;
+ top:30px;
+text-align:left}
+ 
+   .modal-content p{font-size: 17px;
+     color: #dedddd;
+   font-family: "Arial";
+text-align: left;}
+
+   footer {
+    background-color: #000000;
+    padding: 20px 0;
+    color: aliceblue;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.column h3 {
+    color:#8ea487;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: 'Impact';
+}
+
+.column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.column ul li {
+    margin-bottom: 5px;
+}
+
+.column ul li a {
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.column ul li a:hover {
+    text-decoration:underline ;
+}
+
+.column img {
+    max-width: 100%;
+    height: auto;
+}
+
+.copy-right{ background-color: #101010;
+height: 80px;
+}
+
+.copy-right p{ font-family: Arial;
+   font-size: 16px;
+ text-align: center;
+top:15%;
+position:relative}
+
+.all p{ font-family: Arial;
+       font-size: 16px;
+        text-align: center;
+        bottom:5%;
+       position:relative;
+     color:#8ea487}
+
+ /* Slide-up animation */
+ @keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+.character img
+ {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 0.6s, opacity 1s;
+}
+
+.character img.slide-up{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+       </style>
+</head>
+
+
+<body>
+    <button id="scrollbutton" onclick="scrollToTop()">
+        <span class="arrow">&#8593;</span>
+    </button>
+    <header>
+        <div class="navbar">
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <a href="https://www.playstation.com/en-us/games/the-last-of-us-part-i/" class="download-button">
+                <img src="fireflyy.png" alt="download">
+            </a>
+            <div class="download-text">DOWNLOAD NOW</div> 
+
+            <ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About </a>
+                <a href="howtoplay.html">How to Play</a>
+                <a href="character.html">Meet the Cast</a>
+                <a href="contact.html">Contact</a>
+            </ul>
+            </div>
+            </nav>
+            </div>
+    </header>
+
+<!-- Main Character - Joel -->
+<div class="gradient">
+    <h1>Meet the cast</h1>
+<div class="meet"><h2>MAIN CHARACTERS</h2></div>
+<div class="character main-character">
+    <img src="joelcharacter1.jpg" alt="Joel" style="cursor:pointer;">
+    <h2>JOEL</h2>
+    <button class="find-more" onclick="openModal('joel')">Find More</button>
+    <div id="joelModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('joelModal')">&times;</span>
+            <div class="images">
+                <img src="joelyoung.jpg" alt="Joel Young">
+                <img src="joelold.jpg" alt="Joel Old">
+            </div>
+            <h2>JOEL</h2>
+            <p>Joel is a ruthless operator in the black market underground. Self-reliant and ingenious, he becomes hardened after a traumatic loss. Through his journey, he finds the strength to become a father figure and fight for a better future for himself and Ellie.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Secondary Character - Ellie -->
+<div class="character secondary-character">
+    <img src="elliecharacter.jpg" alt="Ellie" style="cursor:pointer;">
+    <h2>ELLIE</h2>
+    <button class="find-more" onclick="openModal('ellie')">Find More</button>
+    <div id="ellieModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ellieModal')">&times;</span>
+            <div class="images">
+                <img src="ellieyoung.jpg" alt="Ellie Young">
+                <img src="ellieold.jpg" alt="Ellie Old">
+            </div>
+            <h2>ELLIE</h2>
+            <p>Ellie is a young survivor born in a post-apocalyptic world. She is brave, resourceful, and determined. Throughout her journey, she forms a deep bond with Joel and learns to navigate the dangers of the world while retaining her humanity.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Secondary Character - Ellie -->
+<div class="character third-character">
+    <img src="abbycharacter.jpg" alt="Abby" style="cursor:pointer;">
+    <h2>ABBY</h2>
+    <button class="find-more" onclick="openModal('abby')">Find More</button>
+    <div id="abbyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('abbyModal')">&times;</span>
+            <div class="images">
+                <img src="abbyyoung.jpg" alt="Ellie Young">
+                <img src="abbyold.jpg" alt="Ellie Old">
+            </div>
+            <h2>ABBY</h2>
+            <p>When we're introduced to Abby in The Last of Us Part II, she is a leading member of the WLF. Despite her reputation as a formidable fighter, her stoic and imposing presence hides her vulnerability. Previously, she and her father were part of the Fireflies until a tragic incident left Abby on her own. She must now grapple with her identity and find meaning and purpose beyond her need for justice.</p>
+        </div>
+    </div>
+</div>
+<div class="additional"><h2>SUPPORTING CHARACTERS</h2></div>
+</div>
+
+<div class="gradient1">
+<div class="character fourth-character">
+    <img src="tommycharacter.jpg" alt="Tommy" style="cursor:pointer;">
+    <h2>TOMMY</h2>
+    <button class="find-more" onclick="openModal('tommy')">Find More</button>
+    <div id="tommyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tommyModal')">&times;</span>
+            <div class="images">
+                <img src="tommyyoung.jpg" alt="Ellie Young">
+                <img src="tommyold.jpg" alt="Ellie Old">
+            </div>
+            <h2>TOMMY</h2>
+            <p>While he shares his brother Joel's ruggedness and grit, Tommy's impulsive, compassionate and hopeful personality sets him apart. After a stint fighting with the Fireflies, he meets his future wife Maria and her community in Jackson, Wyoming. </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="character fifth-character">
+    <img src="tesscharacter.jpg" alt="Tess" style="cursor:pointer;">
+    <h2>TESS</h2>
+    <button class="find-more" onclick="openModal('tess')">Find More</button>
+    <div id="tessModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tessModal')">&times;</span>
+            <div class="images">
+                <img src="tessyoung.jpg" alt="Ellie Young">
+                <img src="tessold.jpg" alt="Ellie Old">
+            </div>
+            <h2>TESS</h2>
+            <p>Tough, capable and arguably more cutthroat than her smuggling partner Joel, Tess overcame the struggles of the brutal world around her to become a savvy strategist and negotiator. Her leadership and physical prowess made her a respected figure in the Boston QZ. While she subscribed to the dog-eat-dog mentality of a hardened survivor, she remains loyal, courageous and ultimately proves to be selfless in her support of Joel and Ellie's journey.</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="character sixth-character">
+    <img src="dinacharacter.jpg" alt="Abby" style="cursor:pointer;">
+    <h2>DINA</h2>
+    <button class="find-more" onclick="openModal('dina')">Find More</button>
+    <div id="dinaModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('dinaModal')">&times;</span>
+            <div class="images">
+                <img src="dinayoung.jpg" alt="Ellie Young">
+                <img src="dinaold.jpg" alt="Ellie Old">
+            </div>
+            <h2>DINA</h2>
+            <p>Dina is Ellie's strong-willed, optimistic best friend and confident. Like Ellie, she was also orphaned young and forced to learn to survive on her own and become self-sufficient. Her strong moral compass and outspoken nature brings out the best in Ellie.</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="character seventh-character">
+    <img src="jessecharacter.jpg" alt="Ellie" style="cursor:pointer;">
+    <h2>JESSE</h2>
+    <button class="find-more" onclick="openModal('jesse')">Find More</button>
+    <div id="jesseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('jesseModal')">&times;</span>
+            <div class="images">
+                <img src="jesseyoung.jpg" alt="Ellie Young">
+                <img src="jesseold.jpg" alt="Ellie Old">
+            </div>
+            <h2>JESSE</h2>
+            <p>Jesse is a natural leader of the Jackson community with a strong moral compass. He is driven by his desire to protect those in his life, including Ellie and Dina. His combat experience and commanding nature make him an elite patrolman.</p>
+        </div>
+    </div>
+</div>
+<div class="infected"><h2>INFECTED</h2></div>
+</div>
+
+
+<div class="gradient2">
+<div class="character eight-character">
+    <img src="runner.jpg" alt="runner" style="cursor:pointer;">
+    <h2>RUNNER</h2>
+    <button class="find-more" onclick="openModal('runner')">Find More</button>
+    <div id="runnerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('runnerModal')">&times;</span>
+            <div class="images">
+                <img src="runneryoung.jpg" alt="Runner Young">
+                <img src="runnerold.jpg" alt="Runner Old">
+            </div>
+            <h2>RUNNER</h2>
+            <p>Runners are the fastest of the Infected classes. While they are considerably weaker than other late-stage Infected, their tendency to attack in hordes make them notoriously dangerous. They are marked by smaller initial growth of fungal spores and blood gushing from their orifices. </p>
+        </div>
+    </div>
+</div>
+
+<div class="character ninth-character">
+    <img src="stalker.jpg" alt="stalker" style="cursor:pointer;">
+    <h2>STALKER</h2>
+    <button class="find-more" onclick="openModal('stalker')">Find More</button>
+    <div id="stalkerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('stalkerModal')">&times;</span>
+            <div class="images">
+                <img src="stalkeryoung.jpg" alt="Stalker Young">
+                <img src="stalkerold.jpg" alt="Stalker Old">
+            </div>
+            <h2>STALKER</h2>
+            <p>After 2 weeks to a year, Runners develop into the second stage of infection: Stalkers. They demonstrate more independent hunting behavior, hiding in darkness and shadows before viciously attacking their prey. </p>
+        </div>
+    </div>
+</div>
+
+<div class="character tenth-character">
+    <img src="clicker.jpg" alt="clicker" style="cursor:pointer;">
+    <h2>CLICKER</h2>
+    <button class="find-more" onclick="openModal('clicker')">Find More</button>
+    <div id="clickerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('clickerModal')">&times;</span>
+            <div class="images">
+                <img src="clickeryoung.jpg" alt="Clicker Young">
+                <img src="clickerold.jpg" alt="Clicker Old">
+            </div>
+            <h2>CLICKER</h2>
+            <p>After a year post-infection, individuals progress into Clickers. At this point, the fungal growths have completely overtaken their bodies, rendering them blind. To overcome their sightlessness, Clickers use echolocation to navigate and locate prey, and their increased strength makes them lethal combatants in close quarters. </p>
+        </div>
+    </div>
+</div>
+
+<div class="character eleventh-character">
+    <img src="Bloater.jpg" alt="bloater" style="cursor:pointer;">
+    <h2>BLOATER</h2>
+    <button class="find-more" onclick="openModal('bloater')">Find More</button>
+    <div id="bloaterModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('bloaterModal')">&times;</span>
+            <div class="images">
+                <img src="bloateryoung.jpg" alt="Bloater Young">
+                <img src="bloaterold.jpg" alt="Bloater Old">
+            </div>
+            <h2>BLOATER</h2>
+            <p>As individuals develop into Bloaters, their eyesight further deteriorates, and their speed is significantly reduced. Their tank-like strength is significantly increased, and the organic growths on their bodies serve as armor, which can be broken off and used as a spore-emitting projectile.</p>
+        </div>
+    </div>
+</div>
+
+<div class="character twelveth-character">
+    <img src="shambler.jpg" alt="shambler" style="cursor:pointer;">
+    <h2>SHAMBLER</h2>
+    <button class="find-more" onclick="openModal('shambler')">Find More</button>
+    <div id="shamblerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('shamblerModal')">&times;</span>
+            <div class="images">
+                <img src="shambleryoung.jpg" alt="shambler Young">
+                <img src="shamblerold.png" alt="shambler Old">
+            </div>
+            <h2>SHAMBLER</h2>
+            <p>While smaller in comparison to the Bloater, Shamblers are equally terrifying in their own right. They are known to break from their typically slow gait and burst into a sudden sprint to capture their prey. When threatened or dying, they will emit toxic spore clouds. </p>
+        </div>
+    </div>
+</div>
+
+<div class="character thirteenth-character">
+    <img src="ratking.jpg" alt="ratking" style="cursor:pointer;">
+    <h2>RAT KING</h2>
+    <button class="find-more" onclick="openModal('ratking')">Find More</button>
+    <div id="ratkingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ratkingModal')">&times;</span>
+            <div class="images">
+                <img src="ratkingyoung.jpg" alt="ratking Young">
+                <img src="ratkingold.jpg" alt="ratking Old">
+            </div>
+            <h2>RAT KING</h2>
+            <p>The strongest of all Infected types, the Rat King is composed of several Infected enveloped by a Cordyceps fungus matrix. It is known to emit spores, throw virulent spore projectiles, and charge at its prey.</p>
+        </div>
+    </div>
+</div>
+</div>
+
+<footer>
+    <div class="footer-columns">
+        <div class="column">
+            <img src="footer1.png" alt="footer1">
+        </div>
+        <div class="column">
+            <img src="footer2.jpg" alt="footer2">
+        </div>
+        <div class="column">
+            <h3>QUICK LINKS</h3>
+            <ul>
+                <li><a href="about.html">&#10095; About Us</a></li>
+                <li><a href="contact.html">&#10095; Contant Us</a></li>
+                <li><a href="https://www.playstation.com/en-ae/games/the-last-of-us-part-i/#faqs">&#10095; FAQ's</a></li>
+                <li><a href="https://www.playstation.com/en-ae/support/?smcid=pdc%3Aen-ae%3Agames-the-last-of-us-part-i%3Aprimary%20nav%3Amsg-support%3Asupport">&#10095; Support</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <img src="footer3.png" alt="footer3">
+        </div>
+    </div>
+</footer>
+<footer>
+    <div class="copy-right">
+        <p>All rights reserved to Original The Last of Us &copy;2013-2023.</p>
+       <div class="all"><p>&copy; All Copyright 2024 by Abeer.</p></div> 
+        </div>
+</footer>
+
+<script>
+
+function openModal(character) {
+    var modalId = character + "Modal";
+    var modal = document.getElementById(modalId);
+    modal.style.display = "block";
+  }
+  
+  // Function to close modal for a specific character
+  function closeModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "none";
+  }
+  
+  // Get all elements with class="find-more" and attach click event listeners
+  var findMoreButtons = document.querySelectorAll('.find-more');
+  findMoreButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var characterId = this.getAttribute('data-character');
+      openModal(characterId);
+    });
+  });
+  
+  // Get all elements with class="close" and attach click event listeners to close the modals
+  var closeButtons = document.querySelectorAll('.close');
+  closeButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var modalId = this.parentNode.id;
+      closeModal(modalId);
+    });
+  });
+
+  document.addEventListener('scroll', function () {
+    const navbar = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+    function slideUpOnLoad() {
+        var images = document.querySelectorAll('.character img');
+        images.forEach(function(img) {
+            img.classList.add('slide-up');
+        });
+    }
+
+    window.addEventListener('load', slideUpOnLoad);
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target); 
+            }
+        });
+    });
+
+    // Observe the headings
+    const targets = document.querySelectorAll('h1, .meet h2, .additional h2, .infected h2');
+    targets.forEach(target => observer.observe(target));
+});
+
+
+
+
+        // Function to check if an element is in viewport
+        function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+  // Function to check if an element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top < window.innerHeight && rect.bottom > 0
+    );
+}
+
+// Function to add the show class to elements in viewport
+function showElementsInViewport() {
+    const cards = document.querySelectorAll('.eight-character .find-more,.ninth-character .find-more,.tenth-character .find-more,.eleventh-character .find-more,.twelveth-character .find-more,.thirteenth-character .find-more, .eight-character h2,.ninth-character h2,.tenth-character h2,.eleventh-character h2,.twelveth-character h2,.thirteenth-character h2, .fourth-character .find-more,.fifth-character .find-more,.sixth-character .find-more,.seventh-character .find-more,.fourth-character h2,.fifth-character h2,.sixth-character h2,.seventh-character h2, .character h2, .infected h2, .additional h2');
+    cards.forEach(card => {
+        if (isInViewport(card)) {
+            card.classList.add('show');
+        }
+    });
+}
+
+// Listen for scroll events
+window.addEventListener('scroll', showElementsInViewport);
+// Trigger the function once to show elements already in viewport on load
+window.addEventListener('load', showElementsInViewport);
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+      
+
+</script>
+  
+
+<script src="web.js"></script>
+</body>
+</html>
+
+
+

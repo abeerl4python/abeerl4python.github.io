@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="web.css">
+    <style>
+
+body{cursor:url("badge3.png"), auto;}
+
+ /* Hover effect for the navigation links */
+ .navbar ul a:hover {
+        background-color: transparent;
+        color: #657560;
+    }
+
+
+nav {
+    background-color: transparent;
+    color:azure;
+    padding:5px;
+     align-items: center;
+    font-family: "Impact";
+    font-weight: bold ;
+    font-size: 19px;
+    transition: background-color 0.3s;
+}
+
+nav.scrolled {
+    background-color: black;
+}
+
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.suppic img{position: absolute; /*fixes the position of the image*/
+right:0;
+top:300px;
+width: 700px;
+height: 820px;}
+
+.contact{ background-image: url("gradient1.jpg");
+background-color: rgb(0, 0, 0);
+    background-size: cover;
+    background-position: center;
+height: 1200px;}
+
+.heading h2{font-size: 80px;
+position: absolute;
+top: 5px;
+left: 565px;
+font-family: 'Impact';
+color: rgb(182, 181, 180);
+}
+
+.contact h2{text-align: left;
+    position: absolute;
+top:200px;
+left:70px;
+font-size: 50px;
+font-family: "Impact";
+color: #6d5454;}
+
+.contact h3{text-align: left;
+position: absolute;
+top: 290px;
+left:70px;
+font-size: 30px;
+font-family: "Impact";
+color: rgb(188, 186, 186);}
+
+.container {
+    background-color: transparent;
+    padding: 150px;
+    border-radius: 10px;
+    width: 400px;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    top:350px;
+    position: absolute;
+}
+
+.container{ align-items: left;}
+.container input[type="text"],
+.container input[type="email"],
+.container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 15px;
+    border: 1px solid #ccc;
+    background-color: #cfcfcf;
+    border-radius: 4px;
+    box-sizing: 25px;
+    text-align: left;
+    align-content: left;
+
+}
+
+.container textarea {
+    height: 150px;
+}
+
+.container input[type="submit"] {
+    background-color: #560000 ;
+    color: rgb(214, 214, 214);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-left: 25px;
+    font-family: 'Impact';
+    font-size: 17px;
+}
+
+.container input[type="submit"]:hover {
+    background-color:  #6d5454;
+}
+
+footer {
+    background-color: #000000;
+    padding: 20px 0;
+    color: aliceblue;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.column h3 {
+    color:#8ea487;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: "Impact";
+}
+
+.column ul {
+    list-style-type: none;
+    padding-left: 70px;
+    text-align: left;
+}
+
+.column ul li {
+    margin-bottom: 5px;
+}
+
+.column ul li a {
+    color: #fafafa;
+    text-decoration: none;
+}
+
+.column ul li a:hover {
+    text-decoration:underline ;
+}
+
+.column img {
+    max-width: 100%;
+    height: auto;
+}
+
+.copy-right{ background-color: #101010;
+height: 80px;
+}
+
+.copy-right p{ font-family: Arial;
+   font-size: 16px;
+ text-align: center;
+top:15%;
+position:relative}
+
+.all p{ font-family: Arial;
+       font-size: 16px;
+        text-align: center;
+        bottom:5%;
+       position:relative;
+     color:#8ea487}
+
+     @keyframes slideFromTop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromBottom {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .slide-top {
+            animation: slideFromTop 1s forwards;
+        }
+
+        .slide-bottom {
+            animation: slideFromBottom 1s forwards;
+        }
+
+</style>
+</head>
+<body>
+  <div class="suppic"><img src="clicker2.jpg"></div>  
+    <button id="scrollbutton" onclick="scrollToTop()">
+        <span class="arrow">&#8593;</span>
+    </button>
+    <header>
+        <div class="navbar">
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <a href="https://www.playstation.com/en-us/games/the-last-of-us-part-i/" class="download-button">
+                <img src="fireflyy.png" alt="download">
+            </a>
+            <div class="download-text">DOWNLOAD NOW</div> 
+
+            <ul>
+                <a href="index.html">Home</a>
+                <a href="about.html">About </a>
+                <a href="howtoplay.html">How to Play</a>   
+                <a href="character.html">Meet the Cast</a>
+                <a href="contact.html">Contact</a>
+            </ul>
+            </div>
+            </nav>
+            </div>
+
+            <div class=heading><h2>CONTACT US</h2></div>
+<div class="contact"> 
+    <h2>Do you have any Query/ Feedback?</h2>
+    <h3>Send us an Email.</h3>
+    <div class="container">
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+    <footer>
+        <div class="footer-columns">
+            <div class="column">
+                <img src="footer1.png" alt="footer1">
+            </div>
+            <div class="column">
+                <img src="footer2.jpg" alt="footer2">
+            </div>
+            <div class="column">
+                <h3>QUICK LINKS</h3>
+                <ul>
+                    <li><a href="about.html">&#10095; About Us</a></li>
+                    <li><a href="contact.html">&#10095; Contant Us</a></li>
+                    <li><a href="https://www.playstation.com/en-ae/games/the-last-of-us-part-i/#faqs">&#10095; FAQ's</a></li>
+                    <li><a href="https://www.playstation.com/en-ae/support/?smcid=pdc%3Aen-ae%3Agames-the-last-of-us-part-i%3Aprimary%20nav%3Amsg-support%3Asupport">&#10095; Support</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <img src="footer3.png" alt="footer3">
+            </div>
+        </div>
+    </footer>
+    <footer>
+        <div class="copy-right">
+            <p>All rights reserved to Original The Last of Us &copy;2013-2023.</p>
+           <div class="all"><p>&copy; All Copyright 2024 by Abeer.</p></div> 
+            </div>
+    </footer>
+
+    <script>
+        document.addEventListener('scroll', function () { // changing of background of nav back upon scrolling
+    const navbar = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+function scrollToTop() { // scroll to top function
+    window.scrollTo({
+        top:0,
+        behaviour: 'smooth'
+    });
+}
+
+window.addEventListener('load', function () { //adding animation to the heading based on the div class
+            document.querySelector('.heading h2').classList.add('slide-top');
+            document.querySelector('.contact').style.opacity = '1';
+            document.querySelector('.contact h2').classList.add('slide-bottom');
+            document.querySelector('.contact h3').classList.add('slide-bottom');
+            document.querySelector('.container').classList.add('slide-bottom');
+        });
+    </script>
+</body>
+</html>
